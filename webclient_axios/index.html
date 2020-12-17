@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8"/>
+  </head>
+
+<body>
+  <div class="container">
+        <h1>Todo List</h1>
+        <h2>Axios</h2>
+        <main>
+          
+          <div class="row">
+            <div class="waves-effect waves-light btn" id="load_btn"><i class="material-icons right">loop</i>Load</div>
+          </div>
+          
+          <div class="row">
+            <div class="col s12 m6">
+              <div class="card red darken-1 hide" id="message">
+                    <div class="card-content white-text">
+                      <span><i class="material-icons left">error_outline</i></span>
+                      <p>Can't load data !</p>
+                      <p id="error_details"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="collection">
+                
+              </div>
+            </main>
+            <footer>
+              TP Todo List - Université de Lorraine - Alexandre Leroux - <a href="mailto:alex@sherpa.one">alex@sherpa.one</a>
+        </footer>
+      </div>
+      <!--JavaScript at end of body for optimized loading-->
+      <script src="./node_modules/axios/dist/axios.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript" src="js/main.js"></script>
+    </body>
+    
+    </html>

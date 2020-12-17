@@ -1,0 +1,34 @@
+version: "3.7"
+
+services:
+  tp.todolist.webclient:
+    image: nginx
+    ports:
+      - 8000:80
+    volumes:
+      - ./webclient:/usr/share/nginx/html
+    links:
+      - tp.todolist.api2
+    network_mode: bridge
+  tp.todolist.webclient_axios:
+    image: nginx
+    ports:
+      - 9000:80
+    volumes:
+      - ./webclient_axios:/usr/share/nginx/html
+    links:
+      - tp.todolist.api2
+    network_mode: bridge
+  tp.todolist.api2:
+    container_name: tp.todolist.api2
+    image: node
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./api:/usr/src/api
+    working_dir: /usr/src/api
+    command: "npm run dev"
+    network_mode: bridge
+    #command: "npm start"
+    #permet d'installer les dépendances directement dans le container à partir de son système
+    #command: bash -c "npm i && npm start"
